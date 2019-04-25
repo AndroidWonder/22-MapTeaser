@@ -4,7 +4,7 @@ It will enable tracking of the Android device. It will then move the map and mar
 to the location of the device on a periodic basis, or it can update when a given
 distance from the last location is reached.
 
-Targeting API 17 avoids runtime security checks introduced at API 23.
+Be sure to use Settings to grant app needed permissions
 
 To update position using the emulator, use the emulator extended controls.
  */
@@ -137,13 +137,13 @@ public class MyLocationListener implements LocationListener {
         LatLng position = new LatLng(latitude, longitude);
 
         mMap.clear();
-/*
+
         mMap.addMarker(new MarkerOptions()
                 .position(position)
                 .title("User Location")
                 .snippet("")
                 .icon(BitmapDescriptorFactory.fromResource(R.drawable.marker)));
-*/
+
         mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(position, zoom));
     }
 
