@@ -47,8 +47,10 @@ public class  MapsActivity extends FragmentActivity implements OnMapReadyCallbac
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
 
+        // Use the LocationManager class to obtain GPS locations
+        locManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+        locListener = new MyLocationListener();
     }
-
 
     /**
      * Manipulates the map once available.
@@ -103,11 +105,6 @@ public class  MapsActivity extends FragmentActivity implements OnMapReadyCallbac
         //enable map tracking of current location
         try {
             mMap.setMyLocationEnabled(true);
-
-
-        // Use the LocationManager class to obtain GPS locations
-        locManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
-        locListener = new MyLocationListener();
 
         //Register for location updates using the named provider, and a pending intent.
         //10 second minimum interval between updates, 0 meters minimum distance between updates
