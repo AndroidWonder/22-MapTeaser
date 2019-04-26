@@ -108,7 +108,7 @@ public class  MapsActivity extends FragmentActivity implements OnMapReadyCallbac
 
         //Register for location updates using the named provider, and a pending intent.
         //10 second minimum interval between updates, 0 meters minimum distance between updates
-        locManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 10000, 100,
+        locManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 10000, 0,
                 locListener);
 
         } catch(SecurityException e) {
