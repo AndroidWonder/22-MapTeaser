@@ -29,7 +29,7 @@
             android:value="AIzaSyAlmz0MNzGymIMvuca1NyFYBusPJ2hfs0U" />
 
         <activity
-            android:name=".MapsActivity"
+            android:name=".MapsActivity" android:exported="true"
             android:label="@string/title_activity_maps">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
